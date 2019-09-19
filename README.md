@@ -17,3 +17,4 @@ Gerador de QR Code utilizando bibliotecas compatíveis com Asp.Net Core!
 * [Convert Byte Array](https://stackoverflow.com/questions/25803915/display-bitmap-in-image-control) - Converter bitmap em bytearray
 * [Bootstrap](https://www.bootstrapdash.com/asp-net-core-with-bootstrap-4/) - Configurar bootstrap no asp.net core
 * [W3Schools](https://www.w3schools.com/TAGs/att_img_width.asp) - Exemplo de utilização da tag img do html 5
+"# QRCode" 

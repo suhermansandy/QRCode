@@ -1,5 +1,6 @@
 ﻿using GeradorQRCodeAspNetCore.QRCodeGenerators;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Drawing;
 
 namespace GeradorQRCodeAspNetCore.Controllers
@@ -11,50 +12,12 @@ namespace GeradorQRCodeAspNetCore.Controllers
             return View();
         }
 
-        public IActionResult GeradorQRCoder()
-        {
-            string url = "https://medium.com/@rikthiago";
-            ViewBag.Message = url;
-            return View();
-        }
-
-        public IActionResult GeradorZXing()
-        {
-            string url = "https://medium.com/@rikthiago";
-            ViewBag.Message = url;
-            return View();
-        }
-
-        public IActionResult GeradorQRCoderSimples()
-        {
-            string url = "https://medium.com/@rikthiago";
-            Image image = GeneratorQRCoder.GeneratedQRCode(url);
+        public IActionResult NewBarcode(string test, string id, string id1)
+        {            
+            Image image = GeneratorQRCoder.GeneratedQRCodeString(test);
             byte[] byteArray = GeneratorQRCoder.ImageToByte2(image);
-            ViewBag.Message = byteArray;
-            return View();
-        }
-
-        public IActionResult GeradorQRCodeEmail()
-        {
-            Image image = GeneratorQRCoder.GeneratedQRCodeMail("teste@email.com", "Teste QR Code", "Uma mensagem qualquer");
-            byte[] byteArray = GeneratorQRCoder.ImageToByte2(image);
-            ViewBag.Message = byteArray;
-            return View();
-        }
-
-        public IActionResult GeradorQRCodeLigacaoCelular()
-        {
-            Image image = GeneratorQRCoder.GeneratedQRCodeLigacaoCelular("+55DDDNºTELEFONE");
-            byte[] byteArray = GeneratorQRCoder.ImageToByte2(image);
-            ViewBag.Message = byteArray;
-            return View();
-        }
-
-        public IActionResult GeradorQRCOdeWhatsApp()
-        {
-            Image image = GeneratorQRCoder.GeneratedQRCodeWhatsApp("Mensagem a ser enviada no WhatsApp");
-            byte[] byteArray = GeneratorQRCoder.ImageToByte2(image);
-            ViewBag.Message = byteArray;
+            string base64 = Convert.ToBase64String(byteArray);
+            ViewBag.Message = base64;
             return View();
         }
     }

@@ -3,10 +3,10 @@
 }
 
 <h2>Index</h2>
+@using (Html.BeginForm("NewBarcode", "Home", FormMethod.Post))
+{
+    <h2>Index</h2>
 
-<a asp-area="" asp-controller="Home" asp-action="GeradorQRCoder" class="btn btn-info">QR Coder Tag Helper</a>
-<a asp-area="" asp-controller="Home" asp-action="GeradorZXing" class="btn btn-info">ZXing Tag Helper</a>
-<a asp-area="" asp-controller="Home" asp-action="GeradorQRCoderSimples" class="btn btn-info">QR Coder Simples</a>
-<a asp-area="" asp-controller="Home" asp-action="GeradorQRCodeEmail" class="btn btn-info">QR Coder E-mail</a>
-<a asp-area="" asp-controller="Home" asp-action="GeradorQRCodeLigacaoCelular" class="btn btn-info">QR Coder Ligação Celular</a>
-<a asp-area="" asp-controller="Home" asp-action="GeradorQRCOdeWhatsApp" class="btn btn-info">QR Coder WhatsApp</a>
+    <p>Nama: </p> <input type="text" id="test" name="test" />
+    <input type="submit" value="submit" />
+}
